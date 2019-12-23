@@ -1,0 +1,8 @@
+{
+  "appId": "ru.shtasi.lessons",
+  "appName": "ionic-angular-course",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
