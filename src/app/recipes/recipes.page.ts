@@ -16,8 +16,24 @@ export class RecipesPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log('ngOnInit');
+  }
+
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter');
+  }
+
+  ionViewDidEnter() {
     this.recipes = this.recipesSrc.getAllRecipes();
-    console.log(this.recipes);
+    console.log('ionViewDidEnter');
+  }
+
+  ionViewWillLeave() {
+    console.log('ionViewWillLeave');
+  }
+
+  ionViewDidLeave() {
+    console.log('ionViewWilionViewDidLeavelEnter');
   }
 
 }
