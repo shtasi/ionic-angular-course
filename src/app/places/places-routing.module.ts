@@ -5,16 +5,28 @@ import { PlacesPage } from './places.page';
 
 const routes: Routes = [
   {
+    path: 'tabs',
+    component: PlacesPage,
+    children: [
+      {
+        path: 'search',
+        loadChildren: () => import('./search/search.module').then(m => m.SearchPageModule)
+      },
+      {
+        path: 'offers',
+        loadChildren: () => import('./offers/offers.module').then(m => m.OffersPageModule)
+      },
+      {
+        path: '',
+        redirectTo: '/places/tabs/search',
+        pathMatch: 'full'
+      }
+    ]
+  },
+  {
     path: '',
-    component: PlacesPage
-  },
-  {
-    path: 'search',
-    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
-  },
-  {
-    path: 'offers',
-    loadChildren: () => import('./offers/offers.module').then( m => m.OffersPageModule)
+    redirectTo: '/places/tabs/search',
+    pathMatch: 'full'
   }
 ];
 
@@ -22,4 +34,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PlacesPageRoutingModule {}
+export class PlacesPageRoutingModule { }
