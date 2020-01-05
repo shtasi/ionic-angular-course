@@ -6,8 +6,11 @@ import { SearchPage } from './search.page';
 const routes: Routes = [
   {
     path: '',
-    component: SearchPage,
     children: [
+      {
+        path: '',
+        component: SearchPage,
+      },
       {
         path: ':placeId',
         loadChildren: () => import('./place-detail/place-detail.module').then( m => m.PlaceDetailPageModule)
