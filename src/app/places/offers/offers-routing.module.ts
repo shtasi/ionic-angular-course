@@ -6,8 +6,11 @@ import { OffersPage } from './offers.page';
 const routes: Routes = [
   {
     path: '',
-    component: OffersPage,
     children: [
+      {
+        path: '',
+        component: OffersPage,
+      },
       {
         path: 'new',
         loadChildren: () => import('./new-offer/new-offer.module').then( m => m.NewOfferPageModule)
